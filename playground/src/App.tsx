@@ -1,4 +1,4 @@
-import { FolderTree, RepoFolderTree, type FolderTreeNode } from "folder-tree-ui"
+import { FolderTree, RepoFolderTree, type FolderTreeNode } from "react-folder-tree"
 
 const demoRoot: FolderTreeNode = {
   name: "playground/",
@@ -30,7 +30,7 @@ export function App() {
         FolderTree プレイグラウンド
       </h1>
       <p style={{ color: "#52525b", marginBottom: "1.5rem", maxWidth: "40rem" }}>
-        各カードは異なる props の例です。ルートの <code>folder-tree-ui</code> を編集したあと、
+        各カードは異なる props の例です。ルートの <code>react-folder-tree</code> を編集したあと、
         <code>npm run build</code> で <code>dist/</code> を更新すると反映されます（またはルートで{" "}
         <code>npm run dev</code> がビルド込み）。
       </p>

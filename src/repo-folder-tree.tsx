@@ -97,7 +97,7 @@ export type RepoFolderTreeProps = {
 }
 
 /**
- * 記事向けの既定データ付きラッパー。`folder-tree-ui/styles.css` を読み込むこと。
+ * 記事向けの既定データ付きラッパー。`react-folder-tree/styles.css` を読み込むこと。
  *
  * 任意のツリーは `<FolderTree root={...} />` を直接使用。
  */
