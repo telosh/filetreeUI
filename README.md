@@ -139,7 +139,7 @@ import "react-folder-tree/styles.css"
 | `src/repo-folder-tree.tsx` | `REPO_TREE_ROOT` / `RepoFolderTree` |
 | `src/index.ts` | パッケージエントリ |
 | `playground/` | Vite による検証用アプリ（`react-folder-tree`: `file:..`） |
-| `docs/` | 設計・機能整理・公開手順（[索引](./docs/README.md)） |
+| `docs/` | 設計・機能整理（[索引](./docs/README.md)） |
 
 `npm publish` で tarball に含まれるのは **`files` フィールドの `dist/`** と、npm が自動同梱する `README` / `LICENSE` / `package.json` です。
 
@@ -168,18 +168,6 @@ npm run check
 ## バージョニング
 
 [Semantic Versioning](https://semver.org/lang/ja/) に従います。変更内容は [CHANGELOG.md](./CHANGELOG.md) に記載します。
-
-## コントリビューション
-
-[CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。
-
-## npm で公開する
-
-[docs/PUBLISHING.md](./docs/PUBLISHING.md) にチェックリストがあります。公開前に `package.json` の `repository` / `homepage` / `bugs` を実リポジトリ URL に置き換え、`LICENSE` の Copyright を更新してください。内部ドキュメントの一覧は [docs/README.md](./docs/README.md) を参照してください。
-
-## セキュリティ
-
-[SECURITY.md](./SECURITY.md) を参照してください。
 
 ## ライセンス
 
