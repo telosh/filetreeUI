@@ -1,5 +1,5 @@
 {
-  "name": "folder-tree-ui",
+  "name": "react-folder-tree",
   "version": "0.1.0",
   "description": "Read-only folder tree UI for React — plain CSS, no Tailwind",
   "license": "MIT",
@@ -14,6 +14,7 @@
   "keywords": [
     "react",
     "react-component",
+    "react-folder-tree",
     "folder-tree",
     "directory-tree",
     "file-tree",

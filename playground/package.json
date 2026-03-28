@@ -1,5 +1,5 @@
 {
-  "name": "folder-tree-playground",
+  "name": "react-folder-tree-playground",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "folder-tree-ui": "file:..",
+    "react-folder-tree": "file:..",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
