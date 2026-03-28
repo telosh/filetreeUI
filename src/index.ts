@@ -1,5 +1,6 @@
 export {
   FolderTree,
+  FolderTreeChevronIcon,
   FolderTreeDefaultFileIcon,
   FolderTreeDefaultFolderIcon,
 } from "./folder-tree"

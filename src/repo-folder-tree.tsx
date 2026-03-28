@@ -94,6 +94,10 @@ export type RepoFolderTreeProps = {
   hideRootIcon?: boolean
   showConnectorLines?: boolean
   density?: "default" | "compact"
+  collapsible?: boolean
+  showDisclosureUI?: boolean
+  expandCollapseAnimation?: boolean
+  defaultCollapsedPaths?: readonly string[]
 }
 
 /**
@@ -112,6 +116,10 @@ export function RepoFolderTree({
   hideRootIcon = false,
   showConnectorLines = true,
   density = "default",
+  collapsible,
+  showDisclosureUI,
+  expandCollapseAnimation,
+  defaultCollapsedPaths,
 }: RepoFolderTreeProps) {
   return (
     <FolderTree
@@ -126,6 +134,10 @@ export function RepoFolderTree({
       hideRootIcon={hideRootIcon}
       showConnectorLines={showConnectorLines}
       density={density}
+      collapsible={collapsible}
+      showDisclosureUI={showDisclosureUI}
+      expandCollapseAnimation={expandCollapseAnimation}
+      defaultCollapsedPaths={defaultCollapsedPaths}
     />
   )
 }
