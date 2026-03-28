@@ -1,4 +1,4 @@
-# folder-tree-ui
+# react-folder-tree
 
 リポジトリやプロジェクト構成を **読み取り専用のツリー** として見せるための React コンポーネントです。ASCII の箱罫ではなく、**左側の縦線（コネクタ）＋等幅フォントの行**で階層を表します。ブログの「ディレクトリ構成」、ドキュメントのサンプルツリー、OSS のファイル一覧プレビューなど向けです。
 
@@ -15,10 +15,10 @@
 ## インストール
 
 ```bash
-npm install folder-tree-ui
+npm install react-folder-tree
 ```
 
-> **パッケージ名** `folder-tree-ui` が npm で既に使われていないか確認し、衝突する場合は `@scope/folder-tree-ui` などに変更してください（`package.json` の `name` とこの README の記載を揃える）。
+> **パッケージ名** `react-folder-tree` が npm で既に使われていないか確認し、衝突する場合は `@scope/react-folder-tree` などに変更してください（`package.json` の `name` とこの README の記載を揃える）。
 
 ## 使い方
 
@@ -27,13 +27,13 @@ npm install folder-tree-ui
 アプリのエントリやレイアウトで **1 回** インポートします。
 
 ```tsx
-import "folder-tree-ui/styles.css"
+import "react-folder-tree/styles.css"
 ```
 
 ### 2. コンポーネント
 
 ```tsx
-import { FolderTree, type FolderTreeNode } from "folder-tree-ui"
+import { FolderTree, type FolderTreeNode } from "react-folder-tree"
 
 const root: FolderTreeNode = {
   name: "my-app/",
@@ -63,8 +63,8 @@ export function Example() {
 ### 記事用サンプル
 
 ```tsx
-import { RepoFolderTree } from "folder-tree-ui"
-import "folder-tree-ui/styles.css"
+import { RepoFolderTree } from "react-folder-tree"
+import "react-folder-tree/styles.css"
 
 <RepoFolderTree aria-label="リポジトリ構成" />
 ```
@@ -80,7 +80,7 @@ import "folder-tree-ui/styles.css"
 | `RepoFolderTreeProps` | ラッパー用 props |
 | `RepoTreeNode` | **非推奨** — `FolderTreeNode` と同じ。新規は `FolderTreeNode` を使用 |
 
-サブパス `folder-tree-ui/styles.css` は `package.json` の `exports` で公開されています。
+サブパス `react-folder-tree/styles.css` は `package.json` の `exports` で公開されています。
 
 ## 主な props（`FolderTree`）
 
@@ -138,7 +138,7 @@ import "folder-tree-ui/styles.css"
 | `src/folder-tree.css` | スタイル（ビルドで `dist/folder-tree.css` にコピー） |
 | `src/repo-folder-tree.tsx` | `REPO_TREE_ROOT` / `RepoFolderTree` |
 | `src/index.ts` | パッケージエントリ |
-| `playground/` | Vite による検証用アプリ（`folder-tree-ui`: `file:..`） |
+| `playground/` | Vite による検証用アプリ（`react-folder-tree`: `file:..`） |
 | `docs/` | 設計・機能整理・公開手順（[索引](./docs/README.md)） |
 
 `npm publish` で tarball に含まれるのは **`files` フィールドの `dist/`** と、npm が自動同梱する `README` / `LICENSE` / `package.json` です。

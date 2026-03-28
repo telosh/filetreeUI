@@ -1,6 +1,6 @@
 # npm 公開のためのチェックリスト
 
-`package.json` の `name`（既定: `folder-tree-ui`）を、npm で未使用の名前（または [スコープ](https://docs.npmjs.com/about-organization-packages-and-scope) 付き `@your-org/folder-tree-ui`）にしてください。
+`package.json` の `name`（既定: `react-folder-tree`）を、npm で未使用の名前（または [スコープ](https://docs.npmjs.com/about-organization-packages-and-scope) 付き `@your-org/react-folder-tree`）にしてください。
 
 ## 公開前
 
@@ -29,7 +29,7 @@
    `dist` のみ＋ npm 既定ファイル以外が混ざっていないか目視する。
 
 7. **ローカル検証（任意）**  
-   `npm pack` した `.tgz` を別プロジェクトで `npm install ./folder-tree-ui-0.1.0.tgz` し、`import "folder-tree-ui/styles.css"` と `import { FolderTree } from "folder-tree-ui"` を試す。
+   `npm pack` した `.tgz` を別プロジェクトで `npm install ./react-folder-tree-0.1.0.tgz` し、`import "react-folder-tree/styles.css"` と `import { FolderTree } from "react-folder-tree"` を試す。
 
 ## 公開
 

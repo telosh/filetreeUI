@@ -62,7 +62,7 @@
 | ID | 機能 | 状態 | 実装・メモ |
 |----|------|------|------------|
 | PKG-1 | ESM + CJS + 型（デュアル） | ✅ | `tsup` / `package.json` exports |
-| PKG-2 | `folder-tree-ui/styles.css` サブパス | ✅ | |
+| PKG-2 | `react-folder-tree/styles.css` サブパス | ✅ | |
 | PKG-3 | `sideEffects: false` | ✅ | |
 
 ---
