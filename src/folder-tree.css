@@ -19,12 +19,15 @@
   --ft-text-muted: #a8a29e;
   --ft-text-root-accent: color-mix(in srgb, #f5b8c4 70%, #1f1c1a);
 
-  /* 行 */
+  /* 行（ラベルは line-height で計算した行ボックスより min-height を確保） */
   --ft-row-height: 1.75rem;
-  --ft-row-height-compact: 1.5rem;
+  /* 小さいフォントでも下降部が切れないよう少し余裕 */
+  --ft-row-height-compact: 1.625rem;
   --ft-row-gap: 0.5rem;
   --ft-font-size: 0.875rem;
   --ft-font-size-sm: 0.8125rem;
+  --ft-line-height: 1.3;
+  --ft-line-height-compact: 1.4;
   --ft-root-font-weight: 600;
 
   /* アイコン */
@@ -44,7 +47,7 @@
   color: var(--ft-text);
   font-family: var(--ft-font-mono);
   font-size: var(--ft-font-size);
-  line-height: 1.2;
+  line-height: var(--ft-line-height);
 }
 
 .ft *,
@@ -73,6 +76,7 @@
 /* --- 密度 --- */
 .ft--compact {
   --ft-row-height: var(--ft-row-height-compact);
+  --ft-line-height: var(--ft-line-height-compact);
   --ft-font-size: var(--ft-font-size-sm);
   --ft-icon-size: 0.8125rem;
   --ft-icon-size-root: 0.875rem;
@@ -108,9 +112,26 @@
   align-items: center;
   gap: var(--ft-row-gap);
   min-height: var(--ft-row-height);
-  height: var(--ft-row-height);
   font-weight: var(--ft-root-font-weight);
   color: var(--ft-text);
+}
+
+.ft-root-row--toggle {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: start;
+  cursor: pointer;
+  border-radius: 0.35rem;
+}
+
+.ft-root-row--toggle:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ft-text) 35%, transparent);
+  outline-offset: 2px;
 }
 
 .ft-root-row .ft-icon {
@@ -121,10 +142,12 @@
 }
 
 .ft-root-label {
-  line-height: 1;
+  line-height: var(--ft-line-height);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  /* flex 内で行ボックスが縮まないように */
+  min-height: calc(1em * var(--ft-line-height));
 }
 
 /* --- リスト --- */
@@ -144,7 +167,6 @@
   align-items: center;
   gap: var(--ft-row-gap);
   min-height: var(--ft-row-height);
-  height: var(--ft-row-height);
   font-size: var(--ft-font-size);
   color: var(--ft-text);
 }
@@ -157,14 +179,81 @@
 }
 
 .ft-label {
-  line-height: 1;
+  line-height: var(--ft-line-height);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  min-height: calc(1em * var(--ft-line-height));
+}
+
+/* --- 開閉（collapsible） --- */
+.ft-chevron-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  flex-shrink: 0;
+  color: var(--ft-text-muted);
+}
+
+.ft-chevron-slot--spacer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.ft-chevron {
+  width: 0.75rem;
+  height: 0.75rem;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+  transform: rotate(0deg);
+}
+
+.ft-chevron[data-expanded] {
+  transform: rotate(90deg);
+}
+
+.ft-row--toggle {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: start;
+  cursor: pointer;
+  border-radius: 0.35rem;
+}
+
+.ft-row--toggle:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ft-text) 35%, transparent);
+  outline-offset: 2px;
+}
+
+.ft-row--toggle:hover .ft-label,
+.ft-root-row--toggle:hover .ft-root-label {
+  color: color-mix(in srgb, var(--ft-text) 88%, var(--ft-text-muted));
 }
 
 .ft-children {
   margin-block-start: 0.125rem;
+}
+
+/* --- 開閉アニメーション（grid 0fr → 1fr） --- */
+.ft-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s ease;
+}
+
+.ft-collapse--open {
+  grid-template-rows: 1fr;
+}
+
+.ft-collapse-inner {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .ft-branch {
