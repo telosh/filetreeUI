@@ -1,0 +1,73 @@
+{
+  "name": "folder-tree-ui",
+  "version": "0.1.0",
+  "description": "Read-only folder tree UI for React — plain CSS, no Tailwind",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/filetree-ui.git"
+  },
+  "homepage": "https://github.com/your-username/filetree-ui#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/filetree-ui/issues"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "folder-tree",
+    "directory-tree",
+    "file-tree",
+    "tree-view",
+    "ui",
+    "css"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/folder-tree.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup && node scripts/copy-css.mjs",
+    "prepack": "npm run build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint:package": "publint",
+    "attw": "attw --pack . --exclude-entrypoints ./styles.css",
+    "check": "npm run typecheck && npm run build && npm run lint:package && npm run attw && npm run build --workspace=playground",
+    "dev": "npm run build && npm run dev --workspace=playground"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@types/react": "^19.0.0",
+    "publint": "^0.3.12",
+    "react": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "~5.6.0"
+  },
+  "workspaces": [
+    "playground"
+  ]
+}
